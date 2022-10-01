@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>19470501_TranThaiThanh</title>
+</head>
+
+<body>
+    <form action="/" method="POST" enctype="multipart/form-data"></form>
+
+    <table border="1">
+        <tr>
+            <th>Ma san pham</th>
+            <th>Ten san pham</th>
+            <th>Hanh Dong</th>
+        </tr>
+
+        <%for (let i=0; i < data.length; i ++) { %>
+            <tr>
+                <td>
+                    <%=data[i].ma_bao%>
+                </td>
+                <td>
+                    <%=data[i].ten_bao%>
+                </td>
+                <td>
+                    <form action="/delete" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="ma_bao" value="<%=data[i].ma_bao%>" />
+                        <input type="submit" value="Xoa" />
+                    </form>
+                </td>
+            </tr>
+            <%} %>
+    </table>
+    <a href="/xxx">them moi</a>
+
+
+    </table>
+</body>
+
+</html>
